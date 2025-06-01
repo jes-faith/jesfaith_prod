@@ -102,7 +102,14 @@ header nav ul li a.active::after {
 .btn a:hover, .btn input[type=submit]:hover{
     opacity: 0.9;
 }
-
+.container{
+    padding: 50px 0;
+    margin: 0 auto;
+    display: flex;
+    width: 60%;
+    justify-items: center;
+    align-items: center;
+}
 .mobile-btn{
     display: none;
 }
@@ -209,7 +216,7 @@ footer .foot_contact .social a:hover{
 
 @media only screen and (max-width : 1279px) {
     .container{
-        width: 90%;
+        width: 95%;
     }
    
 }
@@ -279,5 +286,7 @@ footer .foot_contact .social a:hover{
         align-items: center;
         justify-content: center;
     }
-    
+    .aboutcontent .title, footer .qanda h1, .contact-section .form form h1{
+        text-align: center;
+    }
 }

@@ -1,12 +1,3 @@
-.container{
-    padding: 50px 0;
-    margin: 0 auto;
-    display: flex;
-    width: 60%;
-    justify-items: center;
-    align-items: center;
-}
-
 #about{
     background: #FBFBFB;
 }
@@ -67,8 +58,4 @@
     .aboutcontent h1{
         font-size: 2.5rem;
     }
-    .aboutcontent .title{
-        text-align: center;
-    }
-    
 }
