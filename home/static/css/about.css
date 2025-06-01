@@ -1,0 +1,74 @@
+.container{
+    padding: 50px 0;
+    margin: 0 auto;
+    display: flex;
+    width: 60%;
+    justify-items: center;
+    align-items: center;
+}
+
+#about{
+    background: #FBFBFB;
+}
+
+
+.aboutcontent{
+    width: 100%;
+}
+.aboutcontent .title{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    color: rgb(93, 92, 92);
+}
+
+.aboutcontent h1{
+    font-family: "Bangers", system-ui;
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+
+.aboutcontent p{
+    color: #5e686d;
+    border-left: 2px solid #37383897;
+    padding-left: 40px;
+    line-height: 2;
+    text-align: justify;
+    font-weight: 400;
+}
+.aboutcontent .verse{
+    color: #5e686d;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    letter-spacing: 1.5pt;
+}
+
+.aboutcontent .btn {
+    display: flex;
+    margin: 35px 0 ;
+}
+@media only screen and (max-width : 900px) {
+    .aboutcontent{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .aboutcontent p, .aboutcontent .verse{
+        padding-left: 0;
+        border: none;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    .aboutcontent h1{
+        font-size: 2.5rem;
+    }
+    .aboutcontent .title{
+        text-align: center;
+    }
+    
+}

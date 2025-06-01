@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}?{% now 'U' %}">
+<style>
+        header {
+            background-color: rgba(0, 0, 0, 0.719);
+        }
+
+        #about {
+            padding-top: 100px;
+        }
+        
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="main">
+        <div class="" id="about">
+            <dic class="container">
+                <div class="aboutcontent">
+                    <div class="title">Our Mission in Christ</div>
+                    <h1>About Us</h1>
+                    <div class="verse">Commit to the Lord whatever you do, and he will establish your plans.</div>
+                    <p>We are a group of Christians who believe in the power of love, compassion, and prayer. Our hearts are devoted to helping the needy, comforting the brokenhearted, and being a light in the darkness for those who are struggling. Inspired by the words of Jesus in Matthew 25:40 — "Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me" — we serve others with humility and grace.
+                    <br><br>
+                    <p>    Through acts of kindness, prayer, and generosity, we reach out to children, the elderly, and anyone in need of support. Whether it's through donations, encouragement, or simply being present in someone's life, we aim to reflect Christ's love in all that we do. We also believe in the healing power of prayer and are always here to pray with and for you.
+                    <br><br>
+                    <p>    As it says in Galatians 6:9 — "Let us not grow weary in doing good, for at the proper time we will reap a harvest if we do not give up." Our mission is ongoing, and we trust that through faith, every act of love can bring hope and healing to the world.
+                </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    document.querySelector("a.about_nav").classList.add("active")
+</script>
+
+{% endblock %}

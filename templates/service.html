@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}?{% now 'U' %}">
+<style>
+        header {
+            background-color: rgba(0, 0, 0, 0.719);
+        }
+
+        #about {
+            padding-top: 100px;
+        }
+        
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="main">
+        <div class="" id="about">
+            <dic class="container">
+                <div class="aboutcontent">
+                    <h1>Our Services</h1>
+                    <div class="verse">Serving with Purpose, Guided by Faith</div>
+                    <div>
+                        <div class="title">Caring for Children’s Homes</div>
+                        <p>We believe every child deserves love, safety, and a sense of belonging. Through our outreach
+                            to children’s homes, we provide support, encouragement, and faith-filled interaction to
+                            uplift young lives. From sharing resources to spending quality time, our mission is to bring
+                            hope and joy to the hearts of children who need it most.</p>
+                    </div>
+                    <br><br>
+                    <div>
+                        <div class="title">Supporting Elderly Homes</div>
+                        <p>Honoring our elders is a core value of our faith. Our visits to senior citizens’ homes are
+                            filled with care, conversation, and meaningful connection. Whether through prayer,
+                            companionship, or practical help, we strive to show the elderly that they are cherished,
+                            valued, and never forgotten.</p>
+                    </div>
+                    <br><br>
+                    <div>
+                        <div class="title">Prayer Request Ministry</div>
+                        <p>We believe in the power of prayer and the comfort it brings. If you or someone you know needs
+                            prayer, you can submit a request through our online form. Our prayer team is committed to
+                            lifting up each need with faith and compassion, trusting that God hears and answers.</p>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    document.querySelector("a.service_nav").classList.add("active")
+</script>
+
+{% endblock %}

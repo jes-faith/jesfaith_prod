@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="{% static 'media/titleicon.PNG' %}?{% now 'U' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}?{% now 'U' %}">
+    {% block head %}
+
+    {% endblock %}
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="{% static 'media/file1.png' %}?{% now 'U' %}" alt="" srcset=""></a>
+        </div>
+        <nav id="nav-list">
+            <ul>
+                <li><a href="/" class="home_nav">Home</a></li>
+                <li><a href="/about" class="about_nav">About Us</a></li>
+                <li><a href="/service" class="service_nav">Our Services</a></li>
+                <a href="/#contact" class="mobile-btn head-btn">Prayer Request</a>
+            </ul>
+
+        </nav>
+        <a href="/#contact" class="desktop-btn head-btn">Prayer Request</a>
+        <div id="toggle-btn" onclick="document.getElementById('nav-list').classList.toggle('show');">&#9776;</div>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <div>
+        <button id="playPauseBtn" class="play-button">▶</button>
+        <audio id="audioPlayer" loop>
+            <source src="{% static 'media/sitebgm.mp3' %}?{% now 'U' %}" type="audio/mpeg">
+        </audio>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="qanda">
+                <h1>We're Here to Pray With You</h1>
+                <p>Send us your prayer request anytime—our team is ready to stand with you in faith and lift your needs
+                    to God.</p>
+                <div class="btn"><a href="/#contact">Prayer Request</a></div>
+            </div>
+            <div class="foot_contact">
+
+                <h2 style="font-weight: bolder;margin-bottom: 10px; text-align: center;">Follow US</h2>
+
+                <div class="social">
+                    <a href="http://www.youtube.com/@JesFaithFoundations" class="fa fa-youtube"></a>
+                    <a href="https://www.linkedin.com/company/jesfaith-foundations" class="fa fa-linkedin"></a>
+                    <a href="https://www.instagram.com/jesfaith.foundations" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% block script %}
+    {% endblock %}
+    <script>
+        document.querySelector("#toggle-btn").addEventListener("click", (e) => {
+            var node = e.currentTarget;
+            if (node.innerHTML == "⛌")
+                node.innerHTML = "&#9776;"
+            else
+                node.innerHTML = "&#9932;"
+        })
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const audioPlayer = document.getElementById("audioPlayer");
+
+        let isPlaying = false;
+
+        playPauseBtn.addEventListener("click", () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playPauseBtn.innerHTML = "▶"; // Play icon
+            } else {
+                audioPlayer.play();
+                playPauseBtn.innerHTML = "⏸"; // Pause icon
+            }
+            isPlaying = !isPlaying;
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const hash = window.location.hash;
+            if (hash) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

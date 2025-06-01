@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Italianno&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    -webkit-tap-highlight-color: transparent;
+}
+a{
+    font-family: "Kumbh Sans",sans-serif;
+    text-decoration: none;
+    letter-spacing: 1.3px;
+    color: #5e686d;
+}
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    box-shadow: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+header, footer{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+}
+
+header .logo{
+    width: 100px;
+    min-width: 100px;
+}
+
+header .logo img{
+    width: 100%;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li a{
+    padding: 10px 15px;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+header nav ul li a::after {
+    content: '';
+    display: block;
+    width: calc(100% - 30px);
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+header nav ul li a.active::after {
+    transform: scaleX(1);
+}
+.head-btn, .btn a , .btn input[type=submit] {
+    font-size: 13px;
+    line-height: 21px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #06A7EC;
+    color: white;
+    padding: 15px 30px;    
+    display: block;
+    width: fit-content;
+}
+
+.btn a:hover, .btn input[type=submit]:hover{
+    opacity: 0.9;
+}
+
+.mobile-btn{
+    display: none;
+}
+
+::placeholder {
+    color:rgba(255, 255, 255, 0.911);
+    opacity: 1; 
+  }
+  
+  ::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.911);
+  }
+footer{
+    background-color: #343435;
+    padding: 0;
+    flex-direction: column;
+}
+footer .container{
+    justify-content: space-between;
+    color: rgb(235, 235, 235);
+}
+footer .qanda{
+    width: 60%;
+}
+footer .qanda h1{
+    font-weight: bolder;
+}
+footer .qanda p{
+    margin: 15px 0;
+    padding: 15px;
+    border-left: 1px solid #FBFBFB;
+    text-align: left;
+    line-height: 1.9;
+    font-size: 15px;
+}
+footer .qanda .btn a{
+    margin-top: 10px;
+    padding: 10px 25px;
+}
+
+footer .foot_contact{
+    display: flex;
+    flex-direction: column;
+    color: #FBFBFB;
+}
+footer .foot_contact > a{
+    color: #FBFBFB;
+    margin: 10px;
+}
+
+footer .foot_contact .social a{
+    color: #333;
+    border: 1px solid #FBFBFB;
+    border-radius: 50%;
+    font-size: 1.4em;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    text-align: center;
+    margin: 10px 2px;
+    background: white;
+}
+footer .foot_contact .social a:hover{
+    background-color: transparent;
+    color: white;
+}
+
+  .head-btn {
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Toggle Button (Hamburger Icon) */
+#toggle-btn {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.play-button {
+    z-index: 10001;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5); /* Slight Transparency */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.play-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width : 1279px) {
+    .container{
+        width: 90%;
+    }
+   
+}
+@media only screen and (max-width : 900px) {
+    header {
+        padding: 25px;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        justify-content: center;
+    }
+    .desktop-btn{
+        display: none;
+    }
+    .mobile-btn{
+        display: block;
+        margin: 20px auto;
+    }
+    nav{
+        display: none; /* Hide menu initially */
+    }
+    nav.show {
+        display: block; /* Show menu when toggled */
+    }
+    nav ul li{
+        margin: 10px 0;
+    } 
+    nav ul li a{
+        font-size: 2  0px;
+    }
+    #toggle-btn {
+        display: block;
+        color: white;
+        z-index: 1;
+    }
+
+    .head-btn {
+        margin-top: 1rem;
+    }
+  
+    footer .container{
+        flex-direction: column;
+    }
+    footer .qanda{
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom:1px solid #fbfbfb71;
+    }
+    footer .qanda p{
+        padding: none;
+        border: none;
+        text-align: center;
+    }
+    footer .foot_contact{
+        margin: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}

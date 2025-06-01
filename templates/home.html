@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}?{% now 'U' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+    <div class="banner">
+        <div class="banner_content">
+            <div class="title">Serving Others with Christ's Compassion</div>
+            <div class="verse">
+                <h1>Trusting God is a lifelong journey <br> Don’t travel alone</h1>
+            </div>
+            <div class="btn"><a href="/service">Our Services</a></div>
+        </div>
+    </div>
+
+    <div class="" id="about">
+        <dic class="container">
+            <div class="aboutimage"><img src="{% static 'media/aboutus.jpeg' %}?{% now 'U' %}" alt=""></div>
+            <div class="aboutcontent">
+                <div class="title">Our Mission in Christ</div>
+                <h1>About Us</h1>
+                <div class="verse">Commit to the Lord whatever you do, and he will establish your plans.</div>
+                <p>We are driven by our faith in Jesus Christ to serve those in need with compassion and dignity.
+                    Our mission is to be the hands and feet of Christ, reaching out to the marginalized and
+                    vulnerable in our community. We provide essential services, support, and hope to those facing
+                    challenges, believing that every person is valued and loved by God.</p>
+                <div class="btn"><a href="/about">About Us</a></div>
+            </div>
+    </div>
+
+    <div class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h1>Lift It Up in Prayer</h1>
+                <div class="para">
+                    <p>No burden is too small or too great for God. If you’re facing a challenge, seeking guidance, or
+                        simply need peace, we invite you to share your prayer request. Our team is here to pray with you
+                        and for you—believing together for healing, hope, and breakthrough.
+                    </p>
+                </div>
+            </div>
+            <div class="form">
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <h1>We're Here to Pray With You</h1>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email (Optional)">
+                    <textarea name="message" rows="3" placeholder="Send Your Prayer Request" required></textarea>
+                    <div class="btn"><input type="submit" value="Send To Us!"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    document.querySelector("a.home_nav").classList.add("active")
+</script>
+
+{% endblock %}
